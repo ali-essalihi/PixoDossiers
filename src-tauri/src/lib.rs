@@ -17,12 +17,12 @@ use tauri::Manager;
 use crate::scoring::VerifyResponse;
 
 #[tauri::command]
-pub fn load_state() -> Value {
+fn load_state() -> Value {
     state::load_state()
 }
 
 #[tauri::command]
-pub fn save_state(data: Value) -> Value {
+fn save_state(data: Value) -> Value {
     match state::save_state(data) {
         Ok(()) => json!({ "ok": true }),
         Err(e) => json!({ "ok": false, "error": e }),
@@ -30,7 +30,7 @@ pub fn save_state(data: Value) -> Value {
 }
 
 #[tauri::command]
-pub fn check_environment() -> Value {
+fn check_environment() -> Value {
     let missing = levels::check_missing_payload(None);
     let mut by_level = HashMap::new();
     for lv in 1..=5 {
@@ -60,7 +60,7 @@ pub fn check_environment() -> Value {
 }
 
 #[tauri::command]
-pub fn start_task(
+fn start_task(
     level_id: u32,
     member_name: Option<String>,
     group_name: Option<String>,
@@ -81,7 +81,7 @@ pub fn start_task(
 }
 
 #[tauri::command]
-pub fn verify_task(
+fn verify_task(
     level_id: u32,
     member_name: Option<String>,
     group_name: Option<String>,
@@ -99,7 +99,7 @@ pub fn verify_task(
 }
 
 #[tauri::command]
-pub fn open_folder(key: String) -> Value {
+fn open_folder(key: String) -> Value {
     if key == "RecycleBin" {
         let res = if paths::is_sandbox() {
             let sb_bin = paths::get_sandbox_dir().unwrap().join("$Recycle.Bin");
