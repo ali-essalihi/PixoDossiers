@@ -1,0 +1,20 @@
+[package]
+name = "pixo-dossiers"
+version = "1.0.0"
+description = "Pixo et les Dossiers - Application éducative de gestion des fichiers et dossiers"
+authors = ["Pixo"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "pixo_dossiers_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+unicode-normalization = "0.1"

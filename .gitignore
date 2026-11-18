@@ -1,0 +1,14 @@
+# Rust / Tauri build artifacts
+/src-tauri/target/
+/src-tauri/gen/
+/src-tauri/WixTools/
+/target/
+
+# Sandbox & temporary test directories
+/.pixo_selftest_*/
+/sandbox_dev/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.log

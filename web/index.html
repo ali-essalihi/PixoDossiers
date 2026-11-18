@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixo et les Dossiers</title>
+<link rel="icon" href="assets/emoji/1f916.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <span id="hdr-logo" style="font-size:40px" aria-hidden="true">🤖</span>
+  <b>Pixo et les Dossiers</b>
+  <button type="button" class="btn s" id="bHome">🏠 Accueil</button>
+</header>
+
+<div id="env-banner" class="env-banner" hidden role="status"></div>
+<div id="live-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<main id="app"></main>
+
+<dialog id="adm" aria-labelledby="adm-t"></dialog>
+<dialog id="warn-dlg" aria-labelledby="warn-t"></dialog>
+
+<script src="js/lib/confetti.browser.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
